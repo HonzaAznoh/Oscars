@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS oscars CHARACTER SET utf8;
+USE oscars;
+
+CREATE TABLE oscar_female_winners (
+   id INT NOT NULL AUTO_INCREMENT,
+   year INT(20) NOT NULL,
+   age INT(20) NOT NULL,
+   name VARCHAR(60) NOT NULL,
+   move VARCHAR(255) NOT NULL,
+   PRIMARY KEY (id)
+);
+
+CREATE TABLE oscar_male_winners (
+   id INT NOT NULL AUTO_INCREMENT,
+   year INT(20) NOT NULL,
+   age INT(20) NOT NULL,
+   name VARCHAR(60) NOT NULL,
+   move VARCHAR(255) NOT NULL,
+   PRIMARY KEY (id)
+);

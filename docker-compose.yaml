@@ -1,0 +1,45 @@
+
+networks:
+  oscars:
+    name: oscars
+    driver: bridge
+
+services:
+
+  php:
+    container_name: oscars-php
+    networks:
+      oscars:
+    build:
+      context: .docker
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:80:80"
+    volumes:
+      - ./.docker/apache/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
+      - ./:/var/www/html
+
+    links:
+      - db
+
+  db:
+    container_name: oscars-db
+    image: mariadb:10.7
+    networks:
+      oscars:
+    ports:
+      - "127.0.0.1:3306:3306"
+    command: --init-file /data/application/init.sql
+    volumes:
+      - ./mariadb:/var/lib/mysql
+      - ./init/init.sql:/data/application/init.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: "pass"
+      MYSQL_USER: "root"
+
+volumes:
+  mariadb-data:
+
+
+
+
