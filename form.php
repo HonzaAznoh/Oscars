@@ -74,7 +74,7 @@ if ($_FILES) {
             </div>
             <div class="text-center">
                 <button type="submit" class="btn btn-lg btn-primary mt-3">Nahrát soubory</button>
-                <a class="btn btn-lg btn-success mt-3"" href="http://localhost/list.php">Zobrazit výsledky</a>
+                <a class="btn btn-lg btn-success mt-3" href="http://localhost/list.php">Zobrazit výsledky</a>
             </div>
         </form>
 
