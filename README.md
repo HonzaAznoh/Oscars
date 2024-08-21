@@ -16,6 +16,11 @@ Pokud máte Docker a Docker Compose nainstalované spusťte následující pří
 docker compose up -d --build
 ````
 
+>
+> Pokud máte problém s nahráním souborů v Linuxu, nastavte adresáři uploads práva pro zápis:
+> sudo chmod -R 777 uploads
+>
+
 ## Jak pracovat s aplikací
 
 Do prohlížeče zadejte URL adresu **localhost**, zobrazí se vám hlavní stránka s možností nahrát soubory, nebo zobrazit výsledky.
